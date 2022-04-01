@@ -17,8 +17,8 @@ public class MainController {
         return "greeting";
     }
     @GetMapping("/")
-    public String index(Model model) {
-        model.addAttribute("name", "Какоетоимя");
+    public String indexes(Model model) {
+        model.addAttribute("name", "Кира");
         model.addAttribute("age", 23);
         return "index";
     }

@@ -1,0 +1,28 @@
+spring:
+  profiles.active: test
+
+spring.datasource:
+  url: jdbc:mariadb://192.168.1.211:3306/thesis
+---
+
+
+spring:
+  profiles: test
+
+spring.datasource:
+  username: kirill
+  password:
+  driver-class-name: org.mariadb.jdbc.Driver
+
+spring.jpa:
+  show-sql: true
+
+server:
+  port: 8899
+
+---
+
+
+spring:
+  profiles: work
+
