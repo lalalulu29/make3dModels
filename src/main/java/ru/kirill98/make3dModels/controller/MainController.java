@@ -6,20 +6,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 @RequiredArgsConstructor
 @Slf4j
 public class MainController {
 
-    @GetMapping("/greeting")
-    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
-        model.addAttribute("name", "name");
-        return "greeting";
-    }
     @GetMapping("/")
-    public String indexes(Model model) {
-        model.addAttribute("name", "Кира");
-        model.addAttribute("age", 23);
+    public String index(Model model,
+                          HttpServletRequest request) {
+
+        model.addAttribute("address", request.getRemoteAddr());
+        log.info("Was make get request to index from {}", request.getRemoteAddr());
         return "index";
     }
 }
