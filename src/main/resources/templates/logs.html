@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Logs</title>
+    <script>
+
+        function filter() {
+            var level = document.getElementById("level").value
+            var message = document.getElementById("message").value
+            var date = document.getElementById("date").value
+
+            if(!(level == null) && !(level.length == 0))
+                location.href="/log/get_log_level/" + level.toUpperCase()
+            else if(!(message == null) && !(message.length == 0))
+                location.href="/log/get_log_message/" + message
+            else if(!(date == null) && !(date.length == 0))
+                location.href="/log/get_log_date/" + date
+        }
+        function clearFilters() {
+            location.href="/log/get_all_logs"
+        }
+    </script>
+</head>
+<body>
+Введите уровень:
+<input type="text" value="" id="level">
+<br><br>
+или
+<br><br>
+Введите сообщение:
+<input type="text" value="" id="message">
+<br><br>
+или
+<br><br>
+Введите дату:
+<input type="date" value="" id="date">
+<br><br>
+<input type="button" value="Фильтр" onclick="filter()">
+<input type="button" value="Сбросить" onclick="clearFilters()">
+<br><br>
+<table border="1">
+    <tr>
+        <th>User id</th>
+        <th>Dated</th>
+        <th>Logger</th>
+        <th>Level</th>
+        <th>Message</th>
+    </tr>
+    <tr th:each ="log : ${logs}">
+        <td th:utext="${log.userId}">...</td>
+        <td th:utext="${log.date}">...</td>
+        <td th:utext="${log.logger}">...</td>
+        <td th:utext="${log.level}">...</td>
+        <td th:utext="${log.message}">...</td>
+    </tr>
+</table>
+</body>
+</html>

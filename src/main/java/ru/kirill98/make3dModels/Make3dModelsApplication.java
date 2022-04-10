@@ -1,15 +1,16 @@
 package ru.kirill98.make3dModels;
 
+import lombok.extern.log4j.Log4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.thymeleaf.templateresolver.ITemplateResolver;
 
 @SpringBootApplication
+@Log4j
 public class Make3dModelsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Make3dModelsApplication.class, args);
+		log.info("Was start app");
 	}
 
 //	@Bean
@@ -19,5 +20,7 @@ public class Make3dModelsApplication {
 //		templateEngine.addDialect(sec); // Enable use of "sec"
 //		return templateEngine;
 //	}
+
+
 
 }
