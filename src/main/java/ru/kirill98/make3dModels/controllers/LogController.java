@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import ru.kirill98.make3dModels.services.LogsService;
+import ru.kirill98.make3dModels.services.LogService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
@@ -16,8 +16,8 @@ import java.security.Principal;
 @RequiredArgsConstructor
 @Log4j
 @RequestMapping("log")
-public class LogsController {
-    private final LogsService logsService;
+public class LogController {
+    private final LogService logsService;
 
     @GetMapping("/get_all_logs")
     public String getAllLogs(Model model,

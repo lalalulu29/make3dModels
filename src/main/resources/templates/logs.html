@@ -41,6 +41,7 @@
 <br><br>
 <table border="1">
     <tr>
+        <th>Count</th>
         <th>User id</th>
         <th>Dated</th>
         <th>Logger</th>
@@ -48,6 +49,7 @@
         <th>Message</th>
     </tr>
     <tr th:each ="log : ${logs}">
+        <td th:utext="${log.id}">...</td>
         <td th:utext="${log.userId}">...</td>
         <td th:utext="${log.date}">...</td>
         <td th:utext="${log.logger}">...</td>
