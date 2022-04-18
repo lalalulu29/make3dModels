@@ -1,4 +1,4 @@
-package ru.kirill98.make3dModels.controller;
+package ru.kirill98.make3dModels.controllers;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j;

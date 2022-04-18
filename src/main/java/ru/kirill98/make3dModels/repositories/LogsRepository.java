@@ -1,8 +1,8 @@
-package ru.kirill98.make3dModels.repository;
+package ru.kirill98.make3dModels.repositories;
 
 
 import org.springframework.data.repository.CrudRepository;
-import ru.kirill98.make3dModels.entity.Logs;
+import ru.kirill98.make3dModels.entities.Logs;
 
 
 public interface LogsRepository extends CrudRepository<Logs, Integer> {

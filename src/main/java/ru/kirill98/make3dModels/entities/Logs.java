@@ -1,4 +1,4 @@
-package ru.kirill98.make3dModels.entity;
+package ru.kirill98.make3dModels.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

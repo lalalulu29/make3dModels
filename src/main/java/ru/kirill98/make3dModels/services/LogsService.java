@@ -1,6 +1,6 @@
-package ru.kirill98.make3dModels.service;
+package ru.kirill98.make3dModels.services;
 
-import ru.kirill98.make3dModels.entity.Logs;
+import ru.kirill98.make3dModels.entities.Logs;
 
 
 public interface LogsService {

@@ -1,11 +1,11 @@
-package ru.kirill98.make3dModels.service.impl;
+package ru.kirill98.make3dModels.services.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import org.springframework.stereotype.Service;
-import ru.kirill98.make3dModels.entity.Logs;
-import ru.kirill98.make3dModels.repository.LogsRepository;
-import ru.kirill98.make3dModels.service.LogsService;
+import ru.kirill98.make3dModels.entities.Logs;
+import ru.kirill98.make3dModels.repositories.LogsRepository;
+import ru.kirill98.make3dModels.services.LogsService;
 
 
 @RequiredArgsConstructor
