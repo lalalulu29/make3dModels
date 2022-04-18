@@ -17,8 +17,8 @@ import javax.persistence.GenerationType;
 public class Roles {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column("Uid")
-    private Integer uid;
+    @Column("Uuid")
+    private Integer uuid;
     @Column("Name")
     private String name;
 }

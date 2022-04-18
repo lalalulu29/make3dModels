@@ -25,12 +25,12 @@ public class LogsControllerTest {
         springApplication = SpringApplication.run(Make3dModelsApplication.class);
     }
 
-    @Test
-    void getNedAuthCodeWhenTryingGetLogs() throws IOException {
-        HttpUriRequest request = new HttpGet( "http://localhost:8899/log/get_all_logs/" );
-        HttpResponse httpResponse = HttpClientBuilder.create().build().execute(request);
-        assertEquals(httpResponse.getStatusLine().getStatusCode(), HttpStatus.SC_UNAUTHORIZED);
-    }
+//    @Test
+//    void getNedAuthCodeWhenTryingGetLogs() throws IOException {
+//        HttpUriRequest request = new HttpGet( "http://localhost:8899/log/get_all_logs/" );
+//        HttpResponse httpResponse = HttpClientBuilder.create().build().execute(request);
+//        assertEquals(httpResponse.getStatusLine().getStatusCode(), HttpStatus.SC_UNAUTHORIZED);
+//    }
     @AfterAll
     public static void stop() {
         springApplication.stop();
