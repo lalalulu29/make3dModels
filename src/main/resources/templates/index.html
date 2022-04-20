@@ -3,8 +3,14 @@
 <head>
     <title>Hello view</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script>
+        function openLogs() {
+            location.href="/log/get_all_logs"
+        }
+    </script>
 </head>
 <body>
+<input type="button" value="Logs" onclick="openLogs()">
 <H1 th:text="'Здравствуй, ' + ${address} + '!'"></H1>
 <H3>На данный момент — это просто тестовая страница.<br> Но в ближайшем будущем здесь планируется размещаться сервис,
     позволяющий людям загрузить 3D модель, выбрать пластик, и отправить запрос на печать модели.<br>

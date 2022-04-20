@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Logs</title>
+    <link sizes="16x16" rel="icon" th:href="@{/icons/log_icon.png}">
     <script>
 
         function filter() {
@@ -19,6 +20,9 @@
         }
         function clearFilters() {
             location.href="/log/get_all_logs"
+        }
+        function logout() {
+            location.href="/logout"
         }
     </script>
 </head>
@@ -38,11 +42,12 @@
 <br><br>
 <input type="button" value="Фильтр" onclick="filter()">
 <input type="button" value="Сбросить" onclick="clearFilters()">
+<input type="button" value="Logout" onclick="logout()">
 <br><br>
 <table border="1">
     <tr>
         <th>Count</th>
-        <th>User id</th>
+<!--        <th>User id</th>-->
         <th>Dated</th>
         <th>Logger</th>
         <th>Level</th>
@@ -50,7 +55,7 @@
     </tr>
     <tr th:each ="log : ${logs}">
         <td th:utext="${log.id}">...</td>
-        <td th:utext="${log.userId}">...</td>
+<!--        <td th:utext="${log.userId}">...</td>-->
         <td th:utext="${log.date}">...</td>
         <td th:utext="${log.logger}">...</td>
         <td th:utext="${log.level}">...</td>
