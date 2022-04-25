@@ -26,6 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/log/**").hasRole("ADMIN")
                 .and()
                 .formLogin()
+//				.httpBasic()
 				.and()
                 .logout().logoutSuccessUrl("/")
                 .and();

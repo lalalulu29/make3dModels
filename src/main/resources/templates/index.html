@@ -4,9 +4,21 @@
     <title>Hello view</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script>
+        var cou = 0;
+
         function openLogs() {
             location.href="/log/get_all_logs"
         }
+
+        function count() {
+            document.getElementById('second_count').innerHTML = 'Last update was ' + cou + ' seconds ago';
+            cou++;
+            setTimeout(count, 1000);
+        }
+        window.onload = function() {
+            count();
+        };
+
     </script>
 </head>
 <body>
@@ -16,5 +28,6 @@
     позволяющий людям загрузить 3D модель, выбрать пластик, и отправить запрос на печать модели.<br>
     После чего она будет отклонена, или одобрена и выдана заказчику<br><br></H3>
 <p th:text="'Вы открыли эту страницу уже ' + ${count} + ' раза!'"></p>
+<p id="second_count">...</p>
 </body>
 </html>
