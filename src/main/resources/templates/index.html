@@ -4,15 +4,27 @@
     <title>Hello view</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script>
-        var cou = 0;
+        var seconds = 0;
+        var minutes = 0;
+        var hours = 0;
 
         function openLogs() {
             location.href="/log/get_all_logs"
         }
 
         function count() {
-            document.getElementById('second_count').innerHTML = 'Last update was ' + cou + ' seconds ago';
-            cou++;
+            if(seconds == 60) {
+                minutes++;
+                seconds = 0;
+            }
+            if(minutes == 60) {
+                hours++;
+                minutes = 0;
+            }
+
+            document.getElementById('second_count').innerHTML = 'Last update was ' + hours + ':' + minutes + ':' + seconds + ' ago';
+            seconds++;
+
             setTimeout(count, 1000);
         }
         window.onload = function() {

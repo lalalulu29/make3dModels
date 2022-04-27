@@ -28,17 +28,17 @@
 </head>
 <body>
 Введите уровень:
-<input type="text" value="" id="level">
+<input type="text" th:value="${level}" id="level"/>
 <br><br>
 или
 <br><br>
 Введите сообщение:
-<input type="text" value="" id="message">
+<input type="text" th:value="${message}" id="message">
 <br><br>
 или
 <br><br>
 Введите дату:
-<input type="date" value="" id="date">
+<input type="date" th:value="${date}" id="date">
 <br><br>
 <input type="button" value="Фильтр" onclick="filter()">
 <input type="button" value="Сбросить" onclick="clearFilters()">

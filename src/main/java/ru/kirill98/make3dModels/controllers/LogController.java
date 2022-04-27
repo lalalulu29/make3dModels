@@ -7,10 +7,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import ru.kirill98.make3dModels.services.LogService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
+import java.util.Objects;
 
 @Controller
 @RequiredArgsConstructor
@@ -22,7 +24,24 @@ public class LogController {
     @GetMapping("/get_all_logs")
     public String getAllLogs(Model model,
                              HttpServletRequest request,
-                             Principal principal) {
+                             Principal principal,
+                             @RequestParam(value = "level", required = false) String level,
+                             @RequestParam(value = "message", required = false) String message,
+                             @RequestParam(value = "date", required = false) String date) {
+
+        if(Objects.nonNull(level)) {
+            System.out.println(level);
+            model.addAttribute("level", level);
+        }
+        if(Objects.nonNull(message)) {
+            System.out.println(message);
+            model.addAttribute("message", message);
+        }
+        if(Objects.nonNull(date)) {
+            System.out.println(date);
+            model.addAttribute("date", date);
+        }
+
         model.addAttribute("logs", logsService.findAll());
         log.info("Was got logs from " + request.getRemoteAddr());
         return "logs";
