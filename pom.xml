@@ -121,7 +121,7 @@
 	<distributionManagement>
 		<repository>
 			<id>ru.kirill98.make3dModels</id>
-			<url>file:///var/lib/jenkins/workspace/make3DmodelServer/target</url>
+			<url>file:///server3dModels/</url>
 		</repository>
 	</distributionManagement>
 
