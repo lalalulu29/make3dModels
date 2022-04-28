@@ -118,5 +118,11 @@
 			</plugin>
 		</plugins>
 	</build>
+	<distributionManagement>
+		<repository>
+			<id>ru.kirill98.make3dModels</id>
+			<url>file:///var/lib/jenkins/workspace/make3DmodelServer</url>
+		</repository>
+	</distributionManagement>
 
 </project>
