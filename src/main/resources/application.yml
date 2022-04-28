@@ -14,9 +14,9 @@ spring:
   profiles: test
 
 spring.datasource:
-  url: jdbc:mariadb://192.168.1.211:3306/make3dModels
-  username: kirill
-  password:
+  url: jdbc:mariadb://localhost:3306/make3dModels
+  username: localuser
+  password: local123user
 
 spring.jpa:
   show-sql: true
